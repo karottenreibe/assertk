@@ -36,6 +36,7 @@ sealed class AssertBlock<out T> {
         override fun thrownError(f: Assert<Throwable>.() -> Unit) = fail("expected exception but was:${show(value)}")
 
         override fun returnedValue(f: Assert<T>.() -> Unit) {
+            // TODO fix the thing!
             f(assert(value))
         }
     }
